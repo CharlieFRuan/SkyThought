@@ -1,0 +1,59 @@
+{
+    "configuration": {
+        "task": {
+            "name": "math500",
+            "config": {
+                "handler": "math",
+                "dataset_path": "qq8933/MATH500",
+                "dataset_subset": null,
+                "dataset_split": "test",
+                "dataset_kwargs": {},
+                "question_key": "problem",
+                "answer_key": "answer",
+                "templating_parameters": {
+                    "template": "Return your final response within \\boxed{{}}. {problem}"
+                },
+                "preprocess_config": {}
+            },
+            "start": 0,
+            "end": -1
+        },
+        "model": {
+            "name": "/home/ubuntu/models/Qwen3-8B-FP8",
+            "config": {
+                "model_id": "/home/ubuntu/models/Qwen3-8B-FP8",
+                "name": "Qwen3-8B-FP8",
+                "system_prompt": null,
+                "user_template": null,
+                "assistant_prefill": null
+            }
+        },
+        "backend": {
+            "name": "vllm",
+            "backend_args": {
+                "tensor_parallel_size": 2,
+                "max_num_seqs": 64
+            }
+        },
+        "sampling_params": {
+            "temperature": 0.6,
+            "top_p": 0.95,
+            "max_tokens": 32768,
+            "top_k": 20,
+            "min_p": 0,
+            "n": 16
+        }
+    },
+    "total_completion_tokens": 41917461,
+    "avg_completion_tokens": 5239.683,
+    "total_prompt_tokens": 43440,
+    "avg_prompt_tokens": 5.43,
+    "accuracy": 0.9407,
+    "pass_at_k": {
+        "k=16": 97.0,
+        "k=8": 96.738,
+        "k=4": 96.26,
+        "k=2": 95.493,
+        "k=1": 94.075
+    }
+}

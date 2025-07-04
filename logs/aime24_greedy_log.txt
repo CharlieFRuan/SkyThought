@@ -1,0 +1,817 @@
+INFO 07-02 09:30:56 [__init__.py:239] Automatically detected platform cuda.
+INFO:skythought.evals.cli:Temperature: 0, top_p: 1.0, max_tokens: 32768
+/home/ubuntu/SkyThought/skythought/evals/cli.py:301: UserWarning: Model /home/ubuntu/models/Qwen3-8B not found in /home/ubuntu/SkyThought/skythought/evals/models/model_configs.yaml. Initializing without any system prompt.
+  model_config = ModelConfig.from_model_id(
+Traceback (most recent call last):
+  File "/home/ubuntu/SkyThought/.venv/bin/skythought", line 10, in <module>
+    sys.exit(main())
+  File "/home/ubuntu/SkyThought/skythought/evals/cli.py", line 586, in main
+    app()
+  File "/home/ubuntu/SkyThought/.venv/lib/python3.10/site-packages/typer/main.py", line 341, in __call__
+    raise e
+  File "/home/ubuntu/SkyThought/.venv/lib/python3.10/site-packages/typer/main.py", line 324, in __call__
+    return get_command(self)(*args, **kwargs)
+  File "/home/ubuntu/SkyThought/.venv/lib/python3.10/site-packages/click/core.py", line 1442, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/ubuntu/SkyThought/.venv/lib/python3.10/site-packages/typer/core.py", line 757, in main
+    return _main(
+  File "/home/ubuntu/SkyThought/.venv/lib/python3.10/site-packages/typer/core.py", line 195, in _main
+    rv = self.invoke(ctx)
+  File "/home/ubuntu/SkyThought/.venv/lib/python3.10/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/ubuntu/SkyThought/.venv/lib/python3.10/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/ubuntu/SkyThought/.venv/lib/python3.10/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+  File "/home/ubuntu/SkyThought/.venv/lib/python3.10/site-packages/typer/main.py", line 699, in wrapper
+    return callback(**use_params)
+  File "/home/ubuntu/SkyThought/skythought/evals/cli.py", line 325, in evaluate
+    raise ValueError(
+ValueError: Output directory results/greedy-aime24-float32/_home_ubuntu_models_Qwen3-8B_aime24_e11746 already exists. pass `--overwrite` to overwrite.
+INFO 07-02 09:31:07 [__init__.py:239] Automatically detected platform cuda.
+INFO:skythought.evals.cli:Temperature: 0, top_p: 1.0, max_tokens: 32768
+/home/ubuntu/SkyThought/skythought/evals/cli.py:301: UserWarning: Model /home/ubuntu/models/Qwen3-8B not found in /home/ubuntu/SkyThought/skythought/evals/models/model_configs.yaml. Initializing without any system prompt.
+  model_config = ModelConfig.from_model_id(
+INFO:skythought.evals.inference_and_check:Generating results for 30 problems.
+WARNING 07-02 09:31:10 [config.py:2972] Casting torch.bfloat16 to torch.float16.
+INFO 07-02 09:31:16 [config.py:717] This model supports multiple tasks: {'embed', 'generate', 'score', 'classify', 'reward'}. Defaulting to 'generate'.
+INFO 07-02 09:31:16 [config.py:1770] Defaulting to use mp for distributed inference
+INFO 07-02 09:31:16 [config.py:2003] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 07-02 09:31:17 [core.py:58] Initializing a V1 LLM engine (v0.8.5) with config: model='/home/ubuntu/models/Qwen3-8B', speculative_config=None, tokenizer='/home/ubuntu/models/Qwen3-8B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=40960, download_dir=None, load_format=auto, tensor_parallel_size=2, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='auto', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=None, served_model_name=/home/ubuntu/models/Qwen3-8B, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=True, chunked_prefill_enabled=True, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"level":3,"custom_ops":["none"],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output"],"use_inductor":true,"compile_sizes":[],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":512}
+WARNING 07-02 09:31:17 [multiproc_worker_utils.py:306] Reducing Torch parallelism from 52 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+INFO 07-02 09:31:17 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[0, 1], buffer_handle=(2, 10485760, 10, 'psm_95ea5791'), local_subscribe_addr='ipc:///tmp/8136efd4-316d-4745-bab8-a526457e2ccf', remote_subscribe_addr=None, remote_addr_ipv6=False)
+WARNING 07-02 09:31:17 [utils.py:2522] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x7fc2100a4be0>
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:31:17 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[0], buffer_handle=(1, 10485760, 10, 'psm_73336f93'), local_subscribe_addr='ipc:///tmp/a81f3c1a-33c9-4a2a-8ff7-4377a76d1a39', remote_subscribe_addr=None, remote_addr_ipv6=False)
+WARNING 07-02 09:31:17 [utils.py:2522] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x7fc2100a5f00>
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m INFO 07-02 09:31:17 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[0], buffer_handle=(1, 10485760, 10, 'psm_3d54f6c1'), local_subscribe_addr='ipc:///tmp/71d9543c-7b1e-495c-b313-0b38041587e7', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m INFO 07-02 09:31:19 [utils.py:1055] Found nccl from library libnccl.so.2
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:31:19 [utils.py:1055] Found nccl from library libnccl.so.2
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:31:19 [pynccl.py:69] vLLM is using nccl==2.21.5
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m INFO 07-02 09:31:19 [pynccl.py:69] vLLM is using nccl==2.21.5
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:31:19 [custom_all_reduce_utils.py:244] reading GPU P2P access cache from /home/ubuntu/.cache/vllm/gpu_p2p_access_cache_for_0,1.json
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m INFO 07-02 09:31:19 [custom_all_reduce_utils.py:244] reading GPU P2P access cache from /home/ubuntu/.cache/vllm/gpu_p2p_access_cache_for_0,1.json
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:31:19 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[1], buffer_handle=(1, 4194304, 6, 'psm_cfe3f352'), local_subscribe_addr='ipc:///tmp/80b4bd54-4502-43ba-afd9-144fc3272544', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:31:19 [parallel_state.py:1004] rank 0 in world size 2 is assigned as DP rank 0, PP rank 0, TP rank 0
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:31:19 [cuda.py:221] Using Flash Attention backend on V1 engine.
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m INFO 07-02 09:31:19 [parallel_state.py:1004] rank 1 in world size 2 is assigned as DP rank 0, PP rank 0, TP rank 1
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m WARNING 07-02 09:31:19 [topk_topp_sampler.py:69] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m INFO 07-02 09:31:19 [cuda.py:221] Using Flash Attention backend on V1 engine.
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m WARNING 07-02 09:31:19 [topk_topp_sampler.py:69] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m INFO 07-02 09:31:19 [gpu_model_runner.py:1329] Starting to load model /home/ubuntu/models/Qwen3-8B...
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:31:19 [gpu_model_runner.py:1329] Starting to load model /home/ubuntu/models/Qwen3-8B...
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00<?, ?it/s]
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:01<00:05,  1.26s/it]
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:02<00:04,  1.51s/it]
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:04<00:03,  1.58s/it]
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:06<00:01,  1.63s/it]
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:06<00:00,  1.24s/it]
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:06<00:00,  1.37s/it]
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m 
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:31:27 [loader.py:458] Loading weights took 6.88 seconds
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m INFO 07-02 09:31:27 [loader.py:458] Loading weights took 6.91 seconds
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:31:27 [gpu_model_runner.py:1347] Model loading took 7.6394 GiB and 7.047596 seconds
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m INFO 07-02 09:31:27 [gpu_model_runner.py:1347] Model loading took 7.6394 GiB and 7.081219 seconds
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:31:36 [backends.py:420] Using cache directory: /home/ubuntu/.cache/vllm/torch_compile_cache/2fa09220cb/rank_0_0 for vLLM's torch.compile
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:31:36 [backends.py:430] Dynamo bytecode transform time: 9.35 s
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m INFO 07-02 09:31:36 [backends.py:420] Using cache directory: /home/ubuntu/.cache/vllm/torch_compile_cache/2fa09220cb/rank_1_0 for vLLM's torch.compile
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m INFO 07-02 09:31:36 [backends.py:430] Dynamo bytecode transform time: 9.39 s
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:31:40 [backends.py:136] Cache the graph of shape None for later use
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m INFO 07-02 09:31:41 [backends.py:136] Cache the graph of shape None for later use
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:32:11 [backends.py:148] Compiling a graph for general shape takes 34.84 s
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m INFO 07-02 09:32:13 [backends.py:148] Compiling a graph for general shape takes 35.99 s
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:32:47 [monitor.py:33] torch.compile takes 44.20 s in total
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m INFO 07-02 09:32:47 [monitor.py:33] torch.compile takes 45.39 s in total
+INFO 07-02 09:32:48 [kv_cache_utils.py:634] GPU KV cache size: 873,984 tokens
+INFO 07-02 09:32:48 [kv_cache_utils.py:637] Maximum concurrency for 40,960 tokens per request: 21.34x
+INFO 07-02 09:32:48 [kv_cache_utils.py:634] GPU KV cache size: 873,984 tokens
+INFO 07-02 09:32:48 [kv_cache_utils.py:637] Maximum concurrency for 40,960 tokens per request: 21.34x
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:33:16 [custom_all_reduce.py:195] Registering 4891 cuda graph addresses
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m INFO 07-02 09:33:16 [custom_all_reduce.py:195] Registering 4891 cuda graph addresses
+[1;36m(VllmWorker rank=1 pid=47532)[0;0m INFO 07-02 09:33:16 [gpu_model_runner.py:1686] Graph capturing finished in 28 secs, took 0.70 GiB
+[1;36m(VllmWorker rank=0 pid=47529)[0;0m INFO 07-02 09:33:16 [gpu_model_runner.py:1686] Graph capturing finished in 28 secs, took 0.70 GiB
+INFO 07-02 09:33:16 [core.py:159] init engine (profile, create kv cache, warmup model) took 109.55 seconds
+INFO 07-02 09:33:16 [core_client.py:439] Core engine process 0 ready.
+INFO 07-02 09:33:17 [chat_utils.py:397] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+Processed prompts:   0%|          | 0/30 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   3%|▎         | 1/30 [00:44<21:16, 44.00s/it, est. speed input: 3.16 toks/s, output: 117.55 toks/s]Processed prompts:   7%|▋         | 2/30 [00:56<11:45, 25.21s/it, est. speed input: 5.14 toks/s, output: 203.97 toks/s]Processed prompts:  10%|█         | 3/30 [00:57<06:22, 14.16s/it, est. speed input: 7.83 toks/s, output: 311.71 toks/s]Processed prompts:  13%|█▎        | 4/30 [01:02<04:38, 10.72s/it, est. speed input: 8.27 toks/s, output: 394.26 toks/s]Processed prompts:  17%|█▋        | 5/30 [01:03<02:56,  7.06s/it, est. speed input: 9.42 toks/s, output: 500.15 toks/s]Processed prompts:  20%|██        | 6/30 [01:08<02:34,  6.44s/it, est. speed input: 9.69 toks/s, output: 570.09 toks/s]Processed prompts:  23%|██▎       | 7/30 [01:11<02:05,  5.45s/it, est. speed input: 10.29 toks/s, output: 650.38 toks/s]Processed prompts:  27%|██▋       | 8/30 [01:18<02:09,  5.90s/it, est. speed input: 10.19 toks/s, output: 699.39 toks/s]Processed prompts:  30%|███       | 9/30 [01:36<03:21,  9.58s/it, est. speed input: 8.99 toks/s, output: 673.42 toks/s] Processed prompts:  33%|███▎      | 10/30 [01:37<02:22,  7.13s/it, est. speed input: 10.15 toks/s, output: 764.24 toks/s]Processed prompts:  37%|███▋      | 11/30 [01:40<01:50,  5.80s/it, est. speed input: 10.78 toks/s, output: 844.65 toks/s]Processed prompts:  40%|████      | 12/30 [01:48<01:52,  6.26s/it, est. speed input: 11.14 toks/s, output: 887.84 toks/s]Processed prompts:  43%|████▎     | 13/30 [01:51<01:33,  5.52s/it, est. speed input: 11.76 toks/s, output: 957.07 toks/s]Processed prompts:  47%|████▋     | 14/30 [01:53<01:09,  4.37s/it, est. speed input: 12.95 toks/s, output: 1041.82 toks/s]Processed prompts:  50%|█████     | 15/30 [02:16<02:27,  9.83s/it, est. speed input: 11.54 toks/s, output: 967.23 toks/s] Processed prompts:  53%|█████▎    | 16/30 [02:16<01:36,  6.92s/it, est. speed input: 12.21 toks/s, output: 1063.71 toks/s]Processed prompts:  57%|█████▋    | 17/30 [02:17<01:09,  5.33s/it, est. speed input: 12.65 toks/s, output: 1148.63 toks/s]Processed prompts:  60%|██████    | 18/30 [02:19<00:49,  4.16s/it, est. speed input: 14.05 toks/s, output: 1234.35 toks/s]Processed prompts:  63%|██████▎   | 19/30 [02:35<01:24,  7.69s/it, est. speed input: 13.69 toks/s, output: 1203.83 toks/s]Processed prompts:  67%|██████▋   | 20/30 [02:41<01:13,  7.32s/it, est. speed input: 13.89 toks/s, output: 1251.96 toks/s]Processed prompts:  70%|███████   | 21/30 [03:10<02:03, 13.72s/it, est. speed input: 12.34 toks/s, output: 1159.65 toks/s]Processed prompts:  73%|███████▎  | 22/30 [03:20<01:41, 12.72s/it, est. speed input: 12.67 toks/s, output: 1195.15 toks/s]Processed prompts:  77%|███████▋  | 23/30 [03:36<01:35, 13.64s/it, est. speed input: 12.28 toks/s, output: 1204.02 toks/s]Processed prompts:  80%|████████  | 24/30 [04:33<02:40, 26.81s/it, est. speed input: 9.98 toks/s, output: 1045.62 toks/s] Processed prompts:  83%|████████▎ | 25/30 [04:36<01:37, 19.43s/it, est. speed input: 10.25 toks/s, output: 1131.80 toks/s]Processed prompts:  87%|████████▋ | 26/30 [04:49<01:10, 17.68s/it, est. speed input: 10.15 toks/s, output: 1173.94 toks/s]Processed prompts:  90%|█████████ | 27/30 [05:01<00:47, 15.95s/it, est. speed input: 11.10 toks/s, output: 1223.56 toks/s]Processed prompts:  93%|█████████▎| 28/30 [05:08<00:26, 13.22s/it, est. speed input: 11.15 toks/s, output: 1293.08 toks/s]Processed prompts:  97%|█████████▋| 29/30 [05:29<00:15, 15.67s/it, est. speed input: 10.93 toks/s, output: 1308.57 toks/s]Processed prompts: 100%|██████████| 30/30 [05:29<00:00, 11.00s/it, est. speed input: 11.19 toks/s, output: 1407.88 toks/s]
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+  0%|          | 0/30 [00:00<?, ?it/s]100%|██████████| 30/30 [00:00<00:00, 63.22it/s]100%|██████████| 30/30 [00:00<00:00, 63.19it/s]
+INFO:skythought.evals.inference_and_check:Accuracy: 0.7
+INFO:skythought.evals.inference_and_check:Saved results to results/greedy-aime24-float16/_home_ubuntu_models_Qwen3-8B_aime24_84d8bd/results.json
+INFO:skythought.evals.inference_and_check:Summary saved to results/greedy-aime24-float16/_home_ubuntu_models_Qwen3-8B_aime24_84d8bd/summary.json
+INFO 07-02 09:38:58 [__init__.py:239] Automatically detected platform cuda.
+INFO:skythought.evals.cli:Temperature: 0, top_p: 1.0, max_tokens: 32768
+/home/ubuntu/SkyThought/skythought/evals/cli.py:301: UserWarning: Model /home/ubuntu/models/Qwen3-8B not found in /home/ubuntu/SkyThought/skythought/evals/models/model_configs.yaml. Initializing without any system prompt.
+  model_config = ModelConfig.from_model_id(
+INFO:skythought.evals.inference_and_check:Generating results for 30 problems.
+INFO 07-02 09:39:07 [config.py:717] This model supports multiple tasks: {'embed', 'reward', 'classify', 'score', 'generate'}. Defaulting to 'generate'.
+INFO 07-02 09:39:08 [config.py:1770] Defaulting to use mp for distributed inference
+INFO 07-02 09:39:08 [config.py:2003] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 07-02 09:39:09 [core.py:58] Initializing a V1 LLM engine (v0.8.5) with config: model='/home/ubuntu/models/Qwen3-8B', speculative_config=None, tokenizer='/home/ubuntu/models/Qwen3-8B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=40960, download_dir=None, load_format=auto, tensor_parallel_size=2, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='auto', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=None, served_model_name=/home/ubuntu/models/Qwen3-8B, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=True, chunked_prefill_enabled=True, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"level":3,"custom_ops":["none"],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output"],"use_inductor":true,"compile_sizes":[],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":512}
+WARNING 07-02 09:39:09 [multiproc_worker_utils.py:306] Reducing Torch parallelism from 52 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+INFO 07-02 09:39:09 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[0, 1], buffer_handle=(2, 10485760, 10, 'psm_51c86a0e'), local_subscribe_addr='ipc:///tmp/3d0fc490-fa04-4c32-a400-98d7c55075ef', remote_subscribe_addr=None, remote_addr_ipv6=False)
+WARNING 07-02 09:39:09 [utils.py:2522] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x7690a1b9cd30>
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:39:09 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[0], buffer_handle=(1, 10485760, 10, 'psm_932420d4'), local_subscribe_addr='ipc:///tmp/625ef251-dce8-426e-8f91-a12b0821f3da', remote_subscribe_addr=None, remote_addr_ipv6=False)
+WARNING 07-02 09:39:09 [utils.py:2522] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x7690a1b9dcf0>
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m INFO 07-02 09:39:09 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[0], buffer_handle=(1, 10485760, 10, 'psm_af7d561e'), local_subscribe_addr='ipc:///tmp/a07fa087-b8e2-4054-abff-c76867bf8d0b', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m INFO 07-02 09:39:10 [utils.py:1055] Found nccl from library libnccl.so.2
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:39:10 [utils.py:1055] Found nccl from library libnccl.so.2
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m INFO 07-02 09:39:10 [pynccl.py:69] vLLM is using nccl==2.21.5
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:39:10 [pynccl.py:69] vLLM is using nccl==2.21.5
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m INFO 07-02 09:39:11 [custom_all_reduce_utils.py:244] reading GPU P2P access cache from /home/ubuntu/.cache/vllm/gpu_p2p_access_cache_for_0,1.json
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:39:11 [custom_all_reduce_utils.py:244] reading GPU P2P access cache from /home/ubuntu/.cache/vllm/gpu_p2p_access_cache_for_0,1.json
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:39:11 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[1], buffer_handle=(1, 4194304, 6, 'psm_a3a635f2'), local_subscribe_addr='ipc:///tmp/928fc0c5-9746-4a12-8842-3d7734b53903', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:39:11 [parallel_state.py:1004] rank 0 in world size 2 is assigned as DP rank 0, PP rank 0, TP rank 0
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:39:11 [cuda.py:221] Using Flash Attention backend on V1 engine.
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m INFO 07-02 09:39:11 [parallel_state.py:1004] rank 1 in world size 2 is assigned as DP rank 0, PP rank 0, TP rank 1
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m WARNING 07-02 09:39:11 [topk_topp_sampler.py:69] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m INFO 07-02 09:39:11 [cuda.py:221] Using Flash Attention backend on V1 engine.
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m WARNING 07-02 09:39:11 [topk_topp_sampler.py:69] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m INFO 07-02 09:39:11 [gpu_model_runner.py:1329] Starting to load model /home/ubuntu/models/Qwen3-8B...
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:39:11 [gpu_model_runner.py:1329] Starting to load model /home/ubuntu/models/Qwen3-8B...
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00<?, ?it/s]
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00<00:01,  2.09it/s]
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01<00:01,  1.84it/s]
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:01<00:01,  1.78it/s]
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02<00:00,  1.86it/s]
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02<00:00,  2.60it/s]
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02<00:00,  2.21it/s]
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m 
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m INFO 07-02 09:39:13 [loader.py:458] Loading weights took 2.27 seconds
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:39:13 [loader.py:458] Loading weights took 2.28 seconds
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:39:13 [gpu_model_runner.py:1347] Model loading took 7.6394 GiB and 2.447475 seconds
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m INFO 07-02 09:39:13 [gpu_model_runner.py:1347] Model loading took 7.6394 GiB and 2.447712 seconds
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m INFO 07-02 09:39:23 [backends.py:420] Using cache directory: /home/ubuntu/.cache/vllm/torch_compile_cache/8cd098b432/rank_1_0 for vLLM's torch.compile
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m INFO 07-02 09:39:23 [backends.py:430] Dynamo bytecode transform time: 9.30 s
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:39:23 [backends.py:420] Using cache directory: /home/ubuntu/.cache/vllm/torch_compile_cache/8cd098b432/rank_0_0 for vLLM's torch.compile
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:39:23 [backends.py:430] Dynamo bytecode transform time: 9.30 s
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:39:27 [backends.py:136] Cache the graph of shape None for later use
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m INFO 07-02 09:39:27 [backends.py:136] Cache the graph of shape None for later use
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m INFO 07-02 09:39:58 [backends.py:148] Compiling a graph for general shape takes 34.69 s
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:39:58 [backends.py:148] Compiling a graph for general shape takes 34.77 s
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m INFO 07-02 09:40:32 [monitor.py:33] torch.compile takes 43.99 s in total
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:40:32 [monitor.py:33] torch.compile takes 44.07 s in total
+INFO 07-02 09:40:33 [kv_cache_utils.py:634] GPU KV cache size: 873,984 tokens
+INFO 07-02 09:40:33 [kv_cache_utils.py:637] Maximum concurrency for 40,960 tokens per request: 21.34x
+INFO 07-02 09:40:33 [kv_cache_utils.py:634] GPU KV cache size: 873,984 tokens
+INFO 07-02 09:40:33 [kv_cache_utils.py:637] Maximum concurrency for 40,960 tokens per request: 21.34x
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m INFO 07-02 09:41:01 [custom_all_reduce.py:195] Registering 4891 cuda graph addresses
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:41:01 [custom_all_reduce.py:195] Registering 4891 cuda graph addresses
+[1;36m(VllmWorker rank=1 pid=53779)[0;0m INFO 07-02 09:41:02 [gpu_model_runner.py:1686] Graph capturing finished in 28 secs, took 0.70 GiB
+[1;36m(VllmWorker rank=0 pid=53776)[0;0m INFO 07-02 09:41:02 [gpu_model_runner.py:1686] Graph capturing finished in 28 secs, took 0.70 GiB
+INFO 07-02 09:41:02 [core.py:159] init engine (profile, create kv cache, warmup model) took 108.10 seconds
+INFO 07-02 09:41:02 [core_client.py:439] Core engine process 0 ready.
+INFO 07-02 09:41:02 [chat_utils.py:397] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+Processed prompts:   0%|          | 0/30 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   3%|▎         | 1/30 [00:44<21:24, 44.28s/it, est. speed input: 1.74 toks/s, output: 116.26 toks/s]Processed prompts:   7%|▋         | 2/30 [00:44<08:33, 18.33s/it, est. speed input: 4.86 toks/s, output: 231.99 toks/s]Processed prompts:  10%|█         | 3/30 [00:49<05:25, 12.05s/it, est. speed input: 5.83 toks/s, output: 324.13 toks/s]Processed prompts:  13%|█▎        | 4/30 [00:54<04:08,  9.55s/it, est. speed input: 8.13 toks/s, output: 402.18 toks/s]Processed prompts:  17%|█▋        | 5/30 [00:54<02:34,  6.19s/it, est. speed input: 10.80 toks/s, output: 512.24 toks/s]Processed prompts:  20%|██        | 6/30 [00:55<01:43,  4.30s/it, est. speed input: 11.85 toks/s, output: 618.25 toks/s]Processed prompts:  23%|██▎       | 7/30 [01:08<02:41,  7.04s/it, est. speed input: 11.52 toks/s, output: 611.86 toks/s]Processed prompts:  27%|██▋       | 8/30 [01:09<01:55,  5.24s/it, est. speed input: 12.27 toks/s, output: 708.08 toks/s]Processed prompts:  30%|███       | 9/30 [01:14<01:46,  5.09s/it, est. speed input: 12.33 toks/s, output: 769.91 toks/s]Processed prompts:  33%|███▎      | 10/30 [01:15<01:18,  3.94s/it, est. speed input: 14.16 toks/s, output: 862.91 toks/s]Processed prompts:  37%|███▋      | 11/30 [01:16<00:57,  3.05s/it, est. speed input: 16.14 toks/s, output: 958.14 toks/s]Processed prompts:  40%|████      | 12/30 [01:26<01:29,  4.98s/it, est. speed input: 15.70 toks/s, output: 958.32 toks/s]Processed prompts:  43%|████▎     | 13/30 [01:39<02:08,  7.56s/it, est. speed input: 14.39 toks/s, output: 930.56 toks/s]Processed prompts:  47%|████▋     | 14/30 [01:41<01:32,  5.76s/it, est. speed input: 14.91 toks/s, output: 1017.56 toks/s]Processed prompts:  50%|█████     | 15/30 [01:42<01:06,  4.43s/it, est. speed input: 15.86 toks/s, output: 1105.92 toks/s]Processed prompts:  53%|█████▎    | 16/30 [02:03<02:11,  9.36s/it, est. speed input: 14.76 toks/s, output: 1019.86 toks/s]Processed prompts:  57%|█████▋    | 17/30 [02:08<01:45,  8.08s/it, est. speed input: 15.05 toks/s, output: 1079.38 toks/s]Processed prompts:  60%|██████    | 18/30 [02:11<01:18,  6.58s/it, est. speed input: 15.46 toks/s, output: 1153.87 toks/s]Processed prompts:  63%|██████▎   | 19/30 [02:18<01:13,  6.72s/it, est. speed input: 15.33 toks/s, output: 1194.29 toks/s]Processed prompts:  67%|██████▋   | 20/30 [02:31<01:25,  8.58s/it, est. speed input: 14.54 toks/s, output: 1191.59 toks/s]Processed prompts:  70%|███████   | 21/30 [02:44<01:27,  9.76s/it, est. speed input: 14.00 toks/s, output: 1199.81 toks/s]Processed prompts:  73%|███████▎  | 22/30 [03:45<03:21, 25.23s/it, est. speed input: 10.68 toks/s, output: 969.28 toks/s] Processed prompts:  77%|███████▋  | 23/30 [03:50<02:14, 19.18s/it, est. speed input: 10.86 toks/s, output: 1043.63 toks/s]Processed prompts:  80%|████████  | 24/30 [03:59<01:36, 16.08s/it, est. speed input: 10.89 toks/s, output: 1100.56 toks/s]Processed prompts:  83%|████████▎ | 25/30 [03:59<00:56, 11.34s/it, est. speed input: 11.26 toks/s, output: 1194.73 toks/s]Processed prompts:  87%|████████▋ | 26/30 [04:46<01:27, 21.96s/it, est. speed input: 9.99 toks/s, output: 1097.15 toks/s] Processed prompts:  90%|█████████ | 27/30 [05:30<01:26, 28.72s/it, est. speed input: 9.02 toks/s, output: 1048.60 toks/s]Processed prompts: 100%|██████████| 30/30 [05:30<00:00, 11.03s/it, est. speed input: 11.15 toks/s, output: 1345.63 toks/s]
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+  0%|          | 0/30 [00:00<?, ?it/s]100%|██████████| 30/30 [00:00<00:00, 68.05it/s]100%|██████████| 30/30 [00:00<00:00, 68.01it/s]
+INFO:skythought.evals.inference_and_check:Accuracy: 0.6667
+INFO:skythought.evals.inference_and_check:Saved results to results/greedy-aime24-bfloat16/_home_ubuntu_models_Qwen3-8B_aime24_4ef519/results.json
+INFO:skythought.evals.inference_and_check:Summary saved to results/greedy-aime24-bfloat16/_home_ubuntu_models_Qwen3-8B_aime24_4ef519/summary.json
+INFO 07-02 09:46:44 [__init__.py:239] Automatically detected platform cuda.
+INFO:skythought.evals.cli:Temperature: 0, top_p: 1.0, max_tokens: 32768
+/home/ubuntu/SkyThought/skythought/evals/cli.py:301: UserWarning: Model /home/ubuntu/models/Qwen3-8B not found in /home/ubuntu/SkyThought/skythought/evals/models/model_configs.yaml. Initializing without any system prompt.
+  model_config = ModelConfig.from_model_id(
+INFO:skythought.evals.inference_and_check:Generating results for 30 problems.
+INFO 07-02 09:46:53 [config.py:717] This model supports multiple tasks: {'classify', 'embed', 'reward', 'generate', 'score'}. Defaulting to 'generate'.
+INFO 07-02 09:46:53 [config.py:1770] Defaulting to use mp for distributed inference
+INFO 07-02 09:46:53 [config.py:2003] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 07-02 09:46:54 [core.py:58] Initializing a V1 LLM engine (v0.8.5) with config: model='/home/ubuntu/models/Qwen3-8B', speculative_config=None, tokenizer='/home/ubuntu/models/Qwen3-8B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=40960, download_dir=None, load_format=auto, tensor_parallel_size=2, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=fp8, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='auto', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=None, served_model_name=/home/ubuntu/models/Qwen3-8B, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=True, chunked_prefill_enabled=True, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"level":3,"custom_ops":["none"],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output"],"use_inductor":true,"compile_sizes":[],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":512}
+WARNING 07-02 09:46:54 [multiproc_worker_utils.py:306] Reducing Torch parallelism from 52 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+INFO 07-02 09:46:54 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[0, 1], buffer_handle=(2, 10485760, 10, 'psm_6b56de69'), local_subscribe_addr='ipc:///tmp/67a3cfd0-1e3a-4763-8333-e9bb558fe9c4', remote_subscribe_addr=None, remote_addr_ipv6=False)
+WARNING 07-02 09:46:55 [utils.py:2522] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x74f225b1d060>
+WARNING 07-02 09:46:55 [utils.py:2522] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x74f225b1e9b0>
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:46:55 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[0], buffer_handle=(1, 10485760, 10, 'psm_4802fb47'), local_subscribe_addr='ipc:///tmp/36afc58b-25a0-4cd8-aba3-f42bd6fb02d2', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m INFO 07-02 09:46:55 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[0], buffer_handle=(1, 10485760, 10, 'psm_f3dddffb'), local_subscribe_addr='ipc:///tmp/2991f3df-40d3-40bb-808a-e5ac877dfa7d', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m INFO 07-02 09:46:56 [utils.py:1055] Found nccl from library libnccl.so.2
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:46:56 [utils.py:1055] Found nccl from library libnccl.so.2
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m INFO 07-02 09:46:56 [pynccl.py:69] vLLM is using nccl==2.21.5
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:46:56 [pynccl.py:69] vLLM is using nccl==2.21.5
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:46:56 [custom_all_reduce_utils.py:244] reading GPU P2P access cache from /home/ubuntu/.cache/vllm/gpu_p2p_access_cache_for_0,1.json
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m INFO 07-02 09:46:56 [custom_all_reduce_utils.py:244] reading GPU P2P access cache from /home/ubuntu/.cache/vllm/gpu_p2p_access_cache_for_0,1.json
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:46:56 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[1], buffer_handle=(1, 4194304, 6, 'psm_d1ce08c9'), local_subscribe_addr='ipc:///tmp/bb106b5d-33b7-4249-bb20-5ad25193e256', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:46:56 [parallel_state.py:1004] rank 0 in world size 2 is assigned as DP rank 0, PP rank 0, TP rank 0
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m INFO 07-02 09:46:56 [parallel_state.py:1004] rank 1 in world size 2 is assigned as DP rank 0, PP rank 0, TP rank 1
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:46:56 [cuda.py:221] Using Flash Attention backend on V1 engine.
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m INFO 07-02 09:46:56 [cuda.py:221] Using Flash Attention backend on V1 engine.
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m WARNING 07-02 09:46:56 [topk_topp_sampler.py:69] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m WARNING 07-02 09:46:56 [topk_topp_sampler.py:69] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m INFO 07-02 09:46:56 [gpu_model_runner.py:1329] Starting to load model /home/ubuntu/models/Qwen3-8B...
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:46:56 [gpu_model_runner.py:1329] Starting to load model /home/ubuntu/models/Qwen3-8B...
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00<?, ?it/s]
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00<00:01,  2.07it/s]
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01<00:01,  1.82it/s]
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:01<00:01,  1.78it/s]
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02<00:00,  1.85it/s]
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02<00:00,  2.59it/s]
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02<00:00,  2.20it/s]
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m 
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m INFO 07-02 09:46:59 [loader.py:458] Loading weights took 2.28 seconds
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:46:59 [loader.py:458] Loading weights took 2.28 seconds
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m WARNING 07-02 09:46:59 [kv_cache.py:128] Using Q scale 1.0 and prob scale 1.0 with fp8 attention. This may cause accuracy issues. Please make sure Q/prob scaling factors are available in the fp8 checkpoint.
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m WARNING 07-02 09:46:59 [kv_cache.py:128] Using Q scale 1.0 and prob scale 1.0 with fp8 attention. This may cause accuracy issues. Please make sure Q/prob scaling factors are available in the fp8 checkpoint.
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m INFO 07-02 09:46:59 [gpu_model_runner.py:1347] Model loading took 4.4051 GiB and 2.498006 seconds
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:46:59 [gpu_model_runner.py:1347] Model loading took 4.4051 GiB and 2.497762 seconds
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m INFO 07-02 09:47:11 [backends.py:420] Using cache directory: /home/ubuntu/.cache/vllm/torch_compile_cache/f5523b0e51/rank_1_0 for vLLM's torch.compile
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m INFO 07-02 09:47:11 [backends.py:430] Dynamo bytecode transform time: 11.71 s
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:47:11 [backends.py:420] Using cache directory: /home/ubuntu/.cache/vllm/torch_compile_cache/f5523b0e51/rank_0_0 for vLLM's torch.compile
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:47:11 [backends.py:430] Dynamo bytecode transform time: 11.76 s
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m INFO 07-02 09:47:15 [backends.py:136] Cache the graph of shape None for later use
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:47:16 [backends.py:136] Cache the graph of shape None for later use
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m INFO 07-02 09:47:52 [backends.py:148] Compiling a graph for general shape takes 40.59 s
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:47:52 [backends.py:148] Compiling a graph for general shape takes 40.73 s
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m INFO 07-02 09:48:27 [monitor.py:33] torch.compile takes 52.30 s in total
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:48:27 [monitor.py:33] torch.compile takes 52.50 s in total
+INFO 07-02 09:48:28 [kv_cache_utils.py:634] GPU KV cache size: 920,032 tokens
+INFO 07-02 09:48:28 [kv_cache_utils.py:637] Maximum concurrency for 40,960 tokens per request: 22.46x
+INFO 07-02 09:48:28 [kv_cache_utils.py:634] GPU KV cache size: 920,032 tokens
+INFO 07-02 09:48:28 [kv_cache_utils.py:637] Maximum concurrency for 40,960 tokens per request: 22.46x
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:48:58 [custom_all_reduce.py:195] Registering 4891 cuda graph addresses
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m INFO 07-02 09:48:58 [custom_all_reduce.py:195] Registering 4891 cuda graph addresses
+[1;36m(VllmWorker rank=1 pid=58895)[0;0m INFO 07-02 09:48:58 [gpu_model_runner.py:1686] Graph capturing finished in 30 secs, took 0.73 GiB
+[1;36m(VllmWorker rank=0 pid=58892)[0;0m INFO 07-02 09:48:58 [gpu_model_runner.py:1686] Graph capturing finished in 30 secs, took 0.73 GiB
+INFO 07-02 09:48:58 [core.py:159] init engine (profile, create kv cache, warmup model) took 119.53 seconds
+INFO 07-02 09:48:58 [core_client.py:439] Core engine process 0 ready.
+INFO 07-02 09:48:59 [chat_utils.py:397] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+Processed prompts:   0%|          | 0/30 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   3%|▎         | 1/30 [00:33<16:07, 33.35s/it, est. speed input: 4.47 toks/s, output: 131.78 toks/s]Processed prompts:  10%|█         | 3/30 [00:36<04:24,  9.80s/it, est. speed input: 9.68 toks/s, output: 371.18 toks/s]Processed prompts:  13%|█▎        | 4/30 [00:46<04:20, 10.03s/it, est. speed input: 9.17 toks/s, output: 413.38 toks/s]Processed prompts:  17%|█▋        | 5/30 [00:58<04:26, 10.67s/it, est. speed input: 10.00 toks/s, output: 449.38 toks/s]Processed prompts:  20%|██        | 6/30 [01:05<03:45,  9.41s/it, est. speed input: 10.04 toks/s, output: 520.98 toks/s]Processed prompts:  23%|██▎       | 7/30 [01:06<02:34,  6.72s/it, est. speed input: 11.06 toks/s, output: 631.84 toks/s]Processed prompts:  27%|██▋       | 8/30 [01:08<01:53,  5.14s/it, est. speed input: 11.72 toks/s, output: 733.82 toks/s]Processed prompts:  30%|███       | 9/30 [01:12<01:40,  4.77s/it, est. speed input: 12.02 toks/s, output: 809.65 toks/s]Processed prompts:  33%|███▎      | 10/30 [01:17<01:38,  4.93s/it, est. speed input: 12.67 toks/s, output: 868.56 toks/s]Processed prompts:  37%|███▋      | 11/30 [01:24<01:45,  5.54s/it, est. speed input: 13.61 toks/s, output: 909.84 toks/s]Processed prompts:  40%|████      | 12/30 [01:36<02:15,  7.50s/it, est. speed input: 13.93 toks/s, output: 905.91 toks/s]Processed prompts:  43%|████▎     | 13/30 [01:42<01:59,  7.06s/it, est. speed input: 14.37 toks/s, output: 960.95 toks/s]Processed prompts:  47%|████▋     | 14/30 [01:46<01:38,  6.17s/it, est. speed input: 15.26 toks/s, output: 1031.15 toks/s]Processed prompts:  50%|█████     | 15/30 [01:58<01:57,  7.84s/it, est. speed input: 15.55 toks/s, output: 1035.55 toks/s]Processed prompts:  53%|█████▎    | 16/30 [02:08<01:59,  8.50s/it, est. speed input: 14.97 toks/s, output: 1060.65 toks/s]Processed prompts:  57%|█████▋    | 17/30 [02:12<01:35,  7.35s/it, est. speed input: 15.14 toks/s, output: 1129.25 toks/s]Processed prompts:  60%|██████    | 18/30 [02:13<01:02,  5.23s/it, est. speed input: 15.86 toks/s, output: 1232.55 toks/s]Processed prompts:  63%|██████▎   | 19/30 [02:36<01:57, 10.70s/it, est. speed input: 14.07 toks/s, output: 1151.78 toks/s]Processed prompts:  67%|██████▋   | 20/30 [03:05<02:42, 16.21s/it, est. speed input: 12.47 toks/s, output: 1074.99 toks/s]Processed prompts:  70%|███████   | 21/30 [03:19<02:19, 15.54s/it, est. speed input: 12.11 toks/s, output: 1102.81 toks/s]Processed prompts:  73%|███████▎  | 22/30 [03:48<02:36, 19.56s/it, est. speed input: 11.29 toks/s, output: 1064.50 toks/s]Processed prompts:  77%|███████▋  | 23/30 [04:08<02:18, 19.76s/it, est. speed input: 10.81 toks/s, output: 1079.53 toks/s]Processed prompts:  80%|████████  | 24/30 [04:09<01:23, 13.91s/it, est. speed input: 11.11 toks/s, output: 1179.85 toks/s]Processed prompts:  83%|████████▎ | 25/30 [04:31<01:21, 16.39s/it, est. speed input: 10.54 toks/s, output: 1185.68 toks/s]Processed prompts:  87%|████████▋ | 26/30 [04:44<01:01, 15.36s/it, est. speed input: 10.49 toks/s, output: 1234.58 toks/s]Processed prompts:  90%|█████████ | 27/30 [05:12<00:57, 19.09s/it, est. speed input: 9.87 toks/s, output: 1229.59 toks/s] Processed prompts: 100%|██████████| 30/30 [05:12<00:00, 10.40s/it, est. speed input: 11.83 toks/s, output: 1544.56 toks/s]
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+  0%|          | 0/30 [00:00<?, ?it/s]100%|██████████| 30/30 [00:00<00:00, 46.31it/s]100%|██████████| 30/30 [00:00<00:00, 46.29it/s]
+INFO:skythought.evals.inference_and_check:Accuracy: 0.7
+INFO:skythought.evals.inference_and_check:Saved results to results/greedy-aime24-naive_fp8/_home_ubuntu_models_Qwen3-8B_aime24_2ea78b/results.json
+INFO:skythought.evals.inference_and_check:Summary saved to results/greedy-aime24-naive_fp8/_home_ubuntu_models_Qwen3-8B_aime24_2ea78b/summary.json
+INFO 07-02 09:54:22 [__init__.py:239] Automatically detected platform cuda.
+INFO:skythought.evals.cli:Temperature: 0, top_p: 1.0, max_tokens: 32768
+/home/ubuntu/SkyThought/skythought/evals/cli.py:301: UserWarning: Model /home/ubuntu/models/Qwen3-8B-FP8 not found in /home/ubuntu/SkyThought/skythought/evals/models/model_configs.yaml. Initializing without any system prompt.
+  model_config = ModelConfig.from_model_id(
+INFO:skythought.evals.inference_and_check:Generating results for 30 problems.
+INFO 07-02 09:54:31 [config.py:717] This model supports multiple tasks: {'score', 'embed', 'generate', 'reward', 'classify'}. Defaulting to 'generate'.
+INFO 07-02 09:54:32 [config.py:1770] Defaulting to use mp for distributed inference
+INFO 07-02 09:54:32 [config.py:2003] Chunked prefill is enabled with max_num_batched_tokens=16384.
+WARNING 07-02 09:54:32 [fp8.py:63] Detected fp8 checkpoint. Please note that the format is experimental and subject to change.
+INFO 07-02 09:54:33 [core.py:58] Initializing a V1 LLM engine (v0.8.5) with config: model='/home/ubuntu/models/Qwen3-8B-FP8', speculative_config=None, tokenizer='/home/ubuntu/models/Qwen3-8B-FP8', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=40960, download_dir=None, load_format=auto, tensor_parallel_size=2, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=fp8, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='auto', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=None, served_model_name=/home/ubuntu/models/Qwen3-8B-FP8, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=True, chunked_prefill_enabled=True, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"level":3,"custom_ops":["none"],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output"],"use_inductor":true,"compile_sizes":[],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":512}
+WARNING 07-02 09:54:33 [multiproc_worker_utils.py:306] Reducing Torch parallelism from 52 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+INFO 07-02 09:54:33 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[0, 1], buffer_handle=(2, 10485760, 10, 'psm_0bb7fdbb'), local_subscribe_addr='ipc:///tmp/0461368e-86bd-4d8e-a027-986127314c28', remote_subscribe_addr=None, remote_addr_ipv6=False)
+WARNING 07-02 09:54:33 [utils.py:2522] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x7559e6b90ca0>
+WARNING 07-02 09:54:33 [utils.py:2522] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x7559e6b90e20>
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:54:33 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[0], buffer_handle=(1, 10485760, 10, 'psm_9c044df8'), local_subscribe_addr='ipc:///tmp/54ca3ad1-9340-4a14-8c30-11b7d7d85ed6', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m INFO 07-02 09:54:33 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[0], buffer_handle=(1, 10485760, 10, 'psm_d2c302ac'), local_subscribe_addr='ipc:///tmp/c68e4dc5-9995-4e4e-ac5d-e82f5618650a', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m INFO 07-02 09:54:35 [utils.py:1055] Found nccl from library libnccl.so.2
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:54:35 [utils.py:1055] Found nccl from library libnccl.so.2
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m INFO 07-02 09:54:35 [pynccl.py:69] vLLM is using nccl==2.21.5
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:54:35 [pynccl.py:69] vLLM is using nccl==2.21.5
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:54:35 [custom_all_reduce_utils.py:244] reading GPU P2P access cache from /home/ubuntu/.cache/vllm/gpu_p2p_access_cache_for_0,1.json
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m INFO 07-02 09:54:35 [custom_all_reduce_utils.py:244] reading GPU P2P access cache from /home/ubuntu/.cache/vllm/gpu_p2p_access_cache_for_0,1.json
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:54:35 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[1], buffer_handle=(1, 4194304, 6, 'psm_ff06a215'), local_subscribe_addr='ipc:///tmp/1fb24292-f51d-4c62-ae11-af102611c5cb', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:54:35 [parallel_state.py:1004] rank 0 in world size 2 is assigned as DP rank 0, PP rank 0, TP rank 0
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m INFO 07-02 09:54:35 [parallel_state.py:1004] rank 1 in world size 2 is assigned as DP rank 0, PP rank 0, TP rank 1
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:54:35 [cuda.py:221] Using Flash Attention backend on V1 engine.
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m WARNING 07-02 09:54:35 [topk_topp_sampler.py:69] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m INFO 07-02 09:54:35 [cuda.py:221] Using Flash Attention backend on V1 engine.
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m WARNING 07-02 09:54:35 [topk_topp_sampler.py:69] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m INFO 07-02 09:54:35 [gpu_model_runner.py:1329] Starting to load model /home/ubuntu/models/Qwen3-8B-FP8...
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:54:35 [gpu_model_runner.py:1329] Starting to load model /home/ubuntu/models/Qwen3-8B-FP8...
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:00<00:00,  1.94it/s]
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:01<00:00,  1.92it/s]
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:01<00:00,  1.93it/s]
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m 
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:54:36 [loader.py:458] Loading weights took 1.08 seconds
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m INFO 07-02 09:54:36 [loader.py:458] Loading weights took 1.08 seconds
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m WARNING 07-02 09:54:36 [kv_cache.py:128] Using Q scale 1.0 and prob scale 1.0 with fp8 attention. This may cause accuracy issues. Please make sure Q/prob scaling factors are available in the fp8 checkpoint.
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m WARNING 07-02 09:54:36 [kv_cache.py:128] Using Q scale 1.0 and prob scale 1.0 with fp8 attention. This may cause accuracy issues. Please make sure Q/prob scaling factors are available in the fp8 checkpoint.
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m INFO 07-02 09:54:37 [gpu_model_runner.py:1347] Model loading took 4.4058 GiB and 1.291846 seconds
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:54:37 [gpu_model_runner.py:1347] Model loading took 4.4058 GiB and 1.289418 seconds
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m INFO 07-02 09:54:46 [backends.py:420] Using cache directory: /home/ubuntu/.cache/vllm/torch_compile_cache/83c6a77b72/rank_1_0 for vLLM's torch.compile
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m INFO 07-02 09:54:46 [backends.py:430] Dynamo bytecode transform time: 9.43 s
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:54:46 [backends.py:420] Using cache directory: /home/ubuntu/.cache/vllm/torch_compile_cache/83c6a77b72/rank_0_0 for vLLM's torch.compile
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:54:46 [backends.py:430] Dynamo bytecode transform time: 9.45 s
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m INFO 07-02 09:54:50 [backends.py:136] Cache the graph of shape None for later use
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:54:50 [backends.py:136] Cache the graph of shape None for later use
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:55:21 [backends.py:148] Compiling a graph for general shape takes 34.44 s
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m INFO 07-02 09:55:21 [backends.py:148] Compiling a graph for general shape takes 34.48 s
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m INFO 07-02 09:55:56 [monitor.py:33] torch.compile takes 43.90 s in total
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:55:56 [monitor.py:33] torch.compile takes 43.89 s in total
+INFO 07-02 09:55:57 [kv_cache_utils.py:634] GPU KV cache size: 923,808 tokens
+INFO 07-02 09:55:57 [kv_cache_utils.py:637] Maximum concurrency for 40,960 tokens per request: 22.55x
+INFO 07-02 09:55:57 [kv_cache_utils.py:634] GPU KV cache size: 923,808 tokens
+INFO 07-02 09:55:57 [kv_cache_utils.py:637] Maximum concurrency for 40,960 tokens per request: 22.55x
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:56:29 [custom_all_reduce.py:195] Registering 4891 cuda graph addresses
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m INFO 07-02 09:56:29 [custom_all_reduce.py:195] Registering 4891 cuda graph addresses
+[1;36m(VllmWorker rank=1 pid=66063)[0;0m INFO 07-02 09:56:29 [gpu_model_runner.py:1686] Graph capturing finished in 32 secs, took 0.73 GiB
+[1;36m(VllmWorker rank=0 pid=66060)[0;0m INFO 07-02 09:56:29 [gpu_model_runner.py:1686] Graph capturing finished in 32 secs, took 0.73 GiB
+INFO 07-02 09:56:29 [core.py:159] init engine (profile, create kv cache, warmup model) took 112.92 seconds
+INFO 07-02 09:56:30 [core_client.py:439] Core engine process 0 ready.
+INFO 07-02 09:56:30 [chat_utils.py:397] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+Processed prompts:   0%|          | 0/30 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   3%|▎         | 1/30 [00:44<21:41, 44.88s/it, est. speed input: 3.32 toks/s, output: 110.60 toks/s]Processed prompts:   7%|▋         | 2/30 [00:47<09:14, 19.82s/it, est. speed input: 4.54 toks/s, output: 214.91 toks/s]Processed prompts:  10%|█         | 3/30 [00:53<06:10, 13.73s/it, est. speed input: 5.41 toks/s, output: 296.42 toks/s]Processed prompts:  13%|█▎        | 4/30 [00:57<04:11,  9.67s/it, est. speed input: 6.18 toks/s, output: 385.03 toks/s]Processed prompts:  17%|█▋        | 5/30 [00:58<02:44,  6.58s/it, est. speed input: 8.45 toks/s, output: 483.92 toks/s]Processed prompts:  20%|██        | 6/30 [01:05<02:40,  6.68s/it, est. speed input: 10.00 toks/s, output: 537.44 toks/s]Processed prompts:  23%|██▎       | 7/30 [01:06<01:51,  4.84s/it, est. speed input: 11.01 toks/s, output: 633.15 toks/s]Processed prompts:  27%|██▋       | 8/30 [01:07<01:20,  3.64s/it, est. speed input: 11.85 toks/s, output: 727.33 toks/s]Processed prompts:  30%|███       | 9/30 [01:09<01:06,  3.17s/it, est. speed input: 12.65 toks/s, output: 808.51 toks/s]Processed prompts:  33%|███▎      | 10/30 [01:12<01:02,  3.15s/it, est. speed input: 13.49 toks/s, output: 877.21 toks/s]Processed prompts:  37%|███▋      | 11/30 [01:23<01:48,  5.72s/it, est. speed input: 12.47 toks/s, output: 857.73 toks/s]Processed prompts:  40%|████      | 12/30 [01:26<01:24,  4.67s/it, est. speed input: 13.49 toks/s, output: 935.66 toks/s]Processed prompts:  43%|████▎     | 13/30 [01:37<01:52,  6.61s/it, est. speed input: 13.68 toks/s, output: 927.96 toks/s]Processed prompts:  47%|████▋     | 14/30 [01:48<02:09,  8.08s/it, est. speed input: 14.19 toks/s, output: 926.90 toks/s]Processed prompts:  50%|█████     | 15/30 [01:49<01:29,  5.98s/it, est. speed input: 15.07 toks/s, output: 1014.23 toks/s]Processed prompts:  53%|█████▎    | 16/30 [01:55<01:21,  5.84s/it, est. speed input: 15.33 toks/s, output: 1062.17 toks/s]Processed prompts:  57%|█████▋    | 17/30 [01:57<01:02,  4.80s/it, est. speed input: 16.34 toks/s, output: 1137.33 toks/s]Processed prompts:  60%|██████    | 18/30 [02:00<00:49,  4.10s/it, est. speed input: 17.07 toks/s, output: 1210.30 toks/s]Processed prompts:  63%|██████▎   | 19/30 [02:06<00:51,  4.65s/it, est. speed input: 16.99 toks/s, output: 1249.34 toks/s]Processed prompts:  67%|██████▋   | 20/30 [02:36<02:02, 12.28s/it, est. speed input: 14.38 toks/s, output: 1105.41 toks/s]Processed prompts:  70%|███████   | 21/30 [02:45<01:43, 11.49s/it, est. speed input: 14.20 toks/s, output: 1137.37 toks/s]Processed prompts:  73%|███████▎  | 22/30 [03:14<02:11, 16.47s/it, est. speed input: 12.62 toks/s, output: 1067.77 toks/s]Processed prompts:  77%|███████▋  | 23/30 [03:18<01:30, 12.99s/it, est. speed input: 12.78 toks/s, output: 1136.68 toks/s]Processed prompts:  80%|████████  | 24/30 [03:38<01:30, 15.09s/it, est. speed input: 12.05 toks/s, output: 1127.52 toks/s]Processed prompts:  83%|████████▎ | 25/30 [03:52<01:13, 14.71s/it, est. speed input: 12.04 toks/s, output: 1155.74 toks/s]Processed prompts:  87%|████████▋ | 26/30 [04:33<01:30, 22.58s/it, est. speed input: 10.68 toks/s, output: 1079.31 toks/s]Processed prompts:  90%|█████████ | 27/30 [04:48<01:00, 20.31s/it, est. speed input: 11.54 toks/s, output: 1120.61 toks/s]Processed prompts:  93%|█████████▎| 28/30 [05:10<00:41, 20.76s/it, est. speed input: 11.36 toks/s, output: 1140.69 toks/s]Processed prompts:  97%|█████████▋| 29/30 [05:26<00:19, 19.38s/it, est. speed input: 11.04 toks/s, output: 1184.63 toks/s]Processed prompts: 100%|██████████| 30/30 [05:26<00:00, 10.89s/it, est. speed input: 11.30 toks/s, output: 1284.96 toks/s]
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+  0%|          | 0/30 [00:00<?, ?it/s]100%|██████████| 30/30 [00:00<00:00, 2168.68it/s]
+INFO:skythought.evals.inference_and_check:Accuracy: 0.7
+INFO:skythought.evals.inference_and_check:Saved results to results/greedy-aime24-provided_fp8/_home_ubuntu_models_Qwen3-8B-FP8_aime24_ac2310/results.json
+INFO:skythought.evals.inference_and_check:Summary saved to results/greedy-aime24-provided_fp8/_home_ubuntu_models_Qwen3-8B-FP8_aime24_ac2310/summary.json

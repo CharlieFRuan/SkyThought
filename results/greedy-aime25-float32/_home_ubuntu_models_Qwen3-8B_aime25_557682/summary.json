@@ -1,0 +1,51 @@
+{
+    "configuration": {
+        "task": {
+            "name": "aime25",
+            "config": {
+                "handler": "aime",
+                "dataset_path": "CharlieFRuan/AIME2025",
+                "dataset_subset": null,
+                "dataset_split": "test",
+                "dataset_kwargs": {},
+                "question_key": "question",
+                "answer_key": "answer",
+                "templating_parameters": {
+                    "template": "{prompt}\nReturn your final response within \\boxed{{}}"
+                },
+                "preprocess_config": {}
+            },
+            "start": 0,
+            "end": -1
+        },
+        "model": {
+            "name": "/home/ubuntu/models/Qwen3-8B",
+            "config": {
+                "model_id": "/home/ubuntu/models/Qwen3-8B",
+                "name": "Qwen3-8B",
+                "system_prompt": null,
+                "user_template": null,
+                "assistant_prefill": null
+            }
+        },
+        "backend": {
+            "name": "vllm",
+            "backend_args": {
+                "tensor_parallel_size": 2,
+                "max_num_seqs": 64,
+                "dtype": "float32"
+            }
+        },
+        "sampling_params": {
+            "temperature": 0,
+            "top_p": 1,
+            "max_tokens": 32768
+        }
+    },
+    "total_completion_tokens": 585578,
+    "avg_completion_tokens": 19519.267,
+    "total_prompt_tokens": 4031,
+    "avg_prompt_tokens": 134.367,
+    "accuracy": 0.6333,
+    "pass_at_k": null
+}

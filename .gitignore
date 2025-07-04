@@ -1,3 +1,5 @@
+results.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -165,7 +167,7 @@ cython_debug/
 # Vim
 *.swp
 
-*.json
+# *.json
 token_usage/
 
 run_all.sh

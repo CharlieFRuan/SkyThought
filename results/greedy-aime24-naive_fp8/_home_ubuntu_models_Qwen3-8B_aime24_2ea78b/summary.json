@@ -1,0 +1,53 @@
+{
+    "configuration": {
+        "task": {
+            "name": "aime24",
+            "config": {
+                "handler": "aime",
+                "dataset_path": "AI-MO/aimo-validation-aime",
+                "dataset_subset": null,
+                "dataset_split": "train",
+                "dataset_kwargs": {},
+                "question_key": "problem",
+                "answer_key": "answer",
+                "templating_parameters": {
+                    "template": "Return your final response within \\boxed{{}}. {prompt}"
+                },
+                "preprocess_config": {
+                    "url": "2024"
+                }
+            },
+            "start": 0,
+            "end": -1
+        },
+        "model": {
+            "name": "/home/ubuntu/models/Qwen3-8B",
+            "config": {
+                "model_id": "/home/ubuntu/models/Qwen3-8B",
+                "name": "Qwen3-8B",
+                "system_prompt": null,
+                "user_template": null,
+                "assistant_prefill": null
+            }
+        },
+        "backend": {
+            "name": "vllm",
+            "backend_args": {
+                "tensor_parallel_size": 2,
+                "max_num_seqs": 64,
+                "quantization": "fp8"
+            }
+        },
+        "sampling_params": {
+            "temperature": 0,
+            "top_p": 1,
+            "max_tokens": 32768
+        }
+    },
+    "total_completion_tokens": 481983,
+    "avg_completion_tokens": 16066.1,
+    "total_prompt_tokens": 3691,
+    "avg_prompt_tokens": 123.033,
+    "accuracy": 0.7,
+    "pass_at_k": null
+}
