@@ -1,0 +1,60 @@
+{
+    "configuration": {
+        "task": {
+            "name": "gpqa_diamond",
+            "config": {
+                "handler": "gpqa_diamond",
+                "dataset_path": "Idavidrein/gpqa",
+                "dataset_subset": "gpqa_diamond",
+                "dataset_split": "train",
+                "dataset_kwargs": {},
+                "question_key": "Question",
+                "answer_key": "Answer",
+                "templating_parameters": {
+                    "template": "Return your final response within \\boxed{{}} and only include the letter choice (A, B, C, or D) as your final response. {prompt}"
+                },
+                "preprocess_config": {}
+            },
+            "start": 0,
+            "end": -1
+        },
+        "model": {
+            "name": "/home/ubuntu/models/Qwen3-8B",
+            "config": {
+                "model_id": "/home/ubuntu/models/Qwen3-8B",
+                "name": "Qwen3-8B",
+                "system_prompt": null,
+                "user_template": null,
+                "assistant_prefill": null
+            }
+        },
+        "backend": {
+            "name": "vllm",
+            "backend_args": {
+                "tensor_parallel_size": 2,
+                "max_num_seqs": 64,
+                "dtype": "bfloat16"
+            }
+        },
+        "sampling_params": {
+            "temperature": 0.6,
+            "top_p": 0.95,
+            "max_tokens": 32768,
+            "top_k": 20,
+            "min_p": 0,
+            "n": 16
+        }
+    },
+    "total_completion_tokens": 26676052,
+    "avg_completion_tokens": 8420.471,
+    "total_prompt_tokens": 49481,
+    "avg_prompt_tokens": 15.619,
+    "accuracy": 0.6117,
+    "pass_at_k": {
+        "k=16": 82.828,
+        "k=8": 79.632,
+        "k=4": 75.024,
+        "k=2": 69.171,
+        "k=1": 61.174
+    }
+}
