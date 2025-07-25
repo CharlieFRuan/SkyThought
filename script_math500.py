@@ -19,13 +19,15 @@ for sampling_strategy in sampling_strategies:
         model = "/home/ubuntu/models/Qwen3-8B"
         if dtype == "awq":
             model = "/home/ubuntu/models/Qwen3-8B-AWQ"
-        elif dtype == "provided_fp8":
+        elif "provided_fp8" in dtype:
             model = "/home/ubuntu/models/Qwen3-8B-FP8"
         backend_args = f"tensor_parallel_size={TP_SIZE},max_num_seqs={MAX_NUM_SEQS}"
         if dtype == "naive_fp8":
             backend_args += ",quantization=fp8"
         elif dtype == "provided_fp8" or dtype == "awq":
             pass
+        elif dtype == "provided_fp8_kv8":
+            backend_args += ",kv_cache_dtype=fp8_e4m3"
         else:
             backend_args += f",dtype={dtype}"
         command = []
